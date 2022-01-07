@@ -17,7 +17,9 @@ def create_app(): # 어플리케이션 팩토리, 다른 이름을 사용하면 
     from . import models
 
     # 블루 프린트
-    from .views import main_views # create_app 함수에 등록된 hello_pybo 함수 대신 blueprint를 사용하도록 변경
+    from .views import main_views, question_views, answer_views # create_app 함수에 등록된 hello_pybo 함수 대신 blueprint를 사용하도록 변경
     app.register_blueprint(main_views.bp)
+    app.register_blueprint(question_views.bp)
+    app.register_blueprint(answer_views.bp)
 
     return app
